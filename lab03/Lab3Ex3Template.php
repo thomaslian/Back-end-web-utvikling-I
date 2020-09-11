@@ -10,31 +10,36 @@
     // Algorithm for bubble sort
     function bubbleSort($input)
     {
-        $temp[] = $input;
-        $n = count($temp);
-        $flag = 0;
+        $temp = $input;
 
-        $x = 0; // i
-        $y = 0; // j
-        // implement bubblesort algorithm here, use while or do..while loops and/or break and continue statements
-        while ($x < $n) {
-            while ($y < $n - $x - 1) {
-                if ($input[$y] > $input[$y + 1]) {
-                    // Swap elements
-                    $temp[] = $input[$y];
-                    $input[$y] = $input[$y + 1];
-                    $input[$y + 1] = $temp;
-                    $flag = 1;
+        while (true) {
+            $endOfArray = false;
+            $didSwap = false;
+            $idx = 0;
+
+            do {
+                $x = $temp[$idx];
+                $y = $temp[$idx + 1];
+
+                if (is_null($y)) {
+                    $endOfArray = true;
+                    continue;
                 }
-                $y++;
-            }
-            $x++;
-            if ($flag == 0) {
+
+                if ($y < $x) {
+                    $temp[$idx] = $y;
+                    $temp[$idx + 1] = $x;
+
+                    $didSwap = true;
+                }
+                $idx++;
+            } while ($endOfArray == false); // nested do...while loop
+
+            if ($didSwap == false) {
                 break;
             }
-        }
+        } // first while loop
 
-        // temp should be the sorted array
         return $temp;
     }
 
