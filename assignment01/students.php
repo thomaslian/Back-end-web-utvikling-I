@@ -28,7 +28,9 @@
 <body>
 
     <?php
-    $numberOfStudents = 0;
+    include 'Student.php';
+
+    $numberOfStudents = University::$num_student;
 
     print "<p>Number of students: $numberOfStudents</p>";
     ?>

@@ -1,2 +1,2 @@
-Student number,First name,Last name,DOB,Course code,Course year,Course semester,Instructor name,Number of credits,Grade
-1,Peter,Pan,14-04-1992,dfe44453,2012,Fall,Jack,32,A
+Student number,First name,Last name,DOB,Grade,Course code,Course name,Course year,Course semester,Instructor name,Number of credits
+1,Peter,Pan,14-04-1992,A,dfe44453,Web dev,2012,Fall,Jack,10
