@@ -5,60 +5,18 @@ require_once('University.php');
 
 class Student extends University
 {
-    private $gpa;
-    private $name;
     private $courseCredit;
-    private $grade;
-    private $creditsTaken = 1;
+    private $numberGrade;
+    private $sumOfCourseCreditTimesGrade;
+    private $sumCreditsTaken;
+    private $gpa;
+    private $completedCourses = 0;
+    private $failedCourses = 0;
+
 
     function __construct()
     {
         parent::__construct();
-    }
-
-    function calculateGPA()
-    {
-        $numberGrade = 0;
-
-        switch ($this->grade) {
-            case "A":
-                $numberGrade = 5;
-                break;
-            case "B":
-                $numberGrade = 4;
-                break;
-            case "C":
-                $numberGrade = 3;
-                break;
-            case "D":
-                $numberGrade = 2;
-                break;
-            case "E":
-                $numberGrade = 1;
-                break;
-            case "F":
-                $numberGrade = 0;
-                break;
-            default:
-                error_log("Grade was not found");
-        }
-        $this->gpa = $this->courseCredit * $numberGrade / $this->courseCredit;
-        
-    }
-
-    function getGPA()
-    {
-        return $this->gpa;
-    }
-
-    function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    function getName()
-    {
-        return $this->name;
     }
 
     function setCourseCredit($courseCredit)
@@ -68,6 +26,78 @@ class Student extends University
 
     function setGrade($grade)
     {
-        $this->grade = $grade;
+        $this->numberGrade = $this->getNumberGrade($grade);
+        if ($this->numberGrade == 0) {
+            $this->failedCourses++;
+        } else {
+            $this->completedCourses++;
+        }
+    }
+
+    function calculateSumOfCourseCreditTimesGrade()
+    {
+        $this->sumOfCourseCreditTimesGrade += $this->numberGrade * $this->courseCredit;
+    }
+
+    function calculateSumCreditsTaken()
+    {
+        $this->sumCreditsTaken += $this->courseCredit;
+    }
+
+    function calculateGPA()
+    {
+        $this->gpa = $this->sumOfCourseCreditTimesGrade / $this->sumCreditsTaken;
+    }
+
+    function getGPA()
+    {
+        return $this->gpa;
+    }
+
+    function getCompletedCourses()
+    {
+        return $this->completedCourses;
+    }
+
+    function getFailedCourses()
+    {
+        return $this->failedCourses;
+    }
+
+    function getStatus()
+    {
+        if ($this->gpa < 2) {
+            return "Unsatisfactory";
+        } else if ($this->gpa >= 2 && $this->gpa < 3) {
+            return "Satisfactory";
+        } else if ($this->gpa >= 3 && $this->gpa < 4) {
+            return "Honour";
+        } else if ($this->gpa >= 4 && $this->gpa <= 5) {
+            return "High honour";
+        }
+        return $this->gpa;
+    }
+
+    /**
+     * Takes a letter grade (example A), and turns it into a numbered grade
+     */
+    private function getNumberGrade($letterGrade)
+    {
+        switch ($letterGrade) {
+            case "A":
+                return 5;
+            case "B":
+                return 4;
+            case "C":
+                return 3;
+            case "D":
+                return 2;
+            case "E":
+                return 1;
+            case "F":
+                return 0;
+            default:
+                error_log("Grade was not found");
+        }
     }
 }
