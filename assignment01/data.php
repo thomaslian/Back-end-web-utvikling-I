@@ -35,30 +35,39 @@
     </form>
 
     <?php
+    // Require the File.php file
     require 'classes/File.php';
 
+    // Check if a file is selected
     if ($_FILES) {
+        // Add the name of the file to the name variable
         $name = $_FILES['filename']['name'];
+        // Move the uploaded file to the data folder
         move_uploaded_file($_FILES['filename']['tmp_name'], "data/" . $name);
         // Create a new instance of the uploaded file
         $file = new File($name);
-        // Get the content of the file
+        // Get the content of the uploaded file
         $contentArray = $file->getFileContent();
 
+        // Create arrays to store the students and student grades
         $students = [];
         $studentGrades = [];
-        // Organize students and get values
+        // Go through each row in the uploaded file
         foreach ($contentArray as $content) {
+            // Create a variable that says if the student is already added
             $isStudentAdded = false;
-            // Go through already added students
-            foreach ($students as $key => $addedStudent) {
-                // Check if student is already added
-                if ($addedStudent['Student number'] == $content['Student number']) {
-                    // Student already exists
-                    $isStudentAdded = true;
+            // Check if anything have been added to the students array
+            if ($students) {
+                // Go through the students that are already added
+                foreach ($students as $key => $addedStudent) {
+                    // Check if the student from the current line in the uploaded file is one of the added students
+                    if ($addedStudent['Student number'] == $content['Student number']) {
+                        // Student already exists
+                        $isStudentAdded = true;
+                    }
                 }
             }
-            // Add grade to studentGrades array
+            // Add all grades to the studentGrades array
             array_push(
                 $studentGrades,
                 [
@@ -69,8 +78,9 @@
                     "Number of credits" => $content["Number of credits"]
                 ]
             );
-            // Add student to students array if not already added
+            // Check if student is not already added
             if (!$isStudentAdded) {
+                // Add the student to the students array
                 array_push(
                     $students,
                     [
@@ -83,13 +93,16 @@
             }
         }
 
+        // Create arrays to store the courses and the result of the course participants
         $courses = [];
         $courseParticipants = [];
-        // Organize courses and get values
+        // Go through each row in the uploaded file
         foreach ($contentArray as $content) {
+            // Create a variable that says if the course is already added
             $isCourseAdded = false;
-            // Go through already added courses
+            // Check if anything have been added to the courses array
             if ($courses) {
+                // Go through already added courses
                 foreach ($courses as $key => $addedCourse) {
                     // Check if course is already added
                     if ($addedCourse['Course code'] == $content['Course code']) {
@@ -98,7 +111,9 @@
                     }
                 }
             }
+            // Check if course is not already added
             if (!$isCourseAdded) {
+                // Add the course to the courses array
                 array_push(
                     $courses,
                     [
@@ -114,24 +129,22 @@
         }
 
 
-        // Create the students database
+        // Create the students database file
         $studentsFile = new File("studentsDatabase.csv");
         $studentsFile->createFile($students);
 
-        // Create the grades database
+        // Create the grades database file
         $gradesFile = new File("gradesDatabase.csv");
         $gradesFile->createFile($studentGrades);
 
-        // Create the courses database
+        // Create the courses database file
         $studentsFile = new File("coursesDatabase.csv");
         $studentsFile->createFile($courses);
 
-        echo "<p>File uploaded!</p>";
+        // Echo that the file is successfully uploaded
+        echo "<p>File successfully uploaded!</p>";
     }
     ?>
-
-
-
 
 </body>
 

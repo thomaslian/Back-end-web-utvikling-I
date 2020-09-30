@@ -30,23 +30,36 @@
 <body>
 
     <?php
+    // Require the File.php and Course.php file
     require 'classes/File.php';
-    include 'classes/Course.php';
+    require 'classes/Course.php';
 
+    // Get the course database file and its content
     $coursesFile = new File("coursesDatabase.csv");
+    // Set the content in the courses array
     $courses = $coursesFile->getFileContent();
 
+    // Get the grades database file and its content
     $gradesFile = new File("gradesDatabase.csv");
+    // Set the content in the grades array
     $grades = $gradesFile->getFileContent();
 
+    // Create an array to store courses with information
     $coursesWithParticipants = [];
+    // Go through each course
     foreach ($courses as $courseInfo) {
+        // Create a new instance of the course class
         $course = new Course;
+        // Go through each grade
         foreach ($grades as $grade) {
+            // Check if grade belongs to the current course
             if ($courseInfo["Course code"] == $grade["Course code"]) {
+                // Grade does belong. 
+                // Set particion and pass the grade
                 $course->setParticipant($grade["Grade"]);
             }
         }
+        // Add the current course info to the coursesWithParticipants array
         array_push($coursesWithParticipants, [
             "Course code" => $courseInfo["Course code"],
             "Course name" => $courseInfo["Course name"],
@@ -66,20 +79,19 @@
         return $a['Number of students registered'] < $b['Number of students registered'];
     });
 
-
+    // Set the number of unique courses and display them
     $numberOfUniqueCourses = University::$num_course;
-
     echo "<p>Number of courses: $numberOfUniqueCourses</p>";
 
 
+    // Create a table and list the table headings
     echo "<table><tr>";
     foreach (array_keys($coursesWithParticipants[0]) as $header) {
         echo "<th>$header</th>";
     }
     echo "</tr>";
 
-
-    // List students in a table
+    // List courses in a table
     foreach ($coursesWithParticipants as $course) {
         echo "<tr>";
         foreach ($course as $info) {

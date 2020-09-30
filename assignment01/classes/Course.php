@@ -16,41 +16,69 @@ class Course extends University
         parent::__construct();
     }
 
+    /**
+     * Sets the participation and if the student failed or not.
+     * 
+     * @param $grade - Grade of the student participating in this course
+     */
     function setParticipant($grade)
     {
+        // Add 1 to the number of participants
         $this->courseParticipants++;
+        // Get the numbered grade
         $numberGrade = $this->getNumberGrade($grade);
+        // Sum the grades (for calculating average)
         $this->sumGrades += $numberGrade;
+        // Check if grade is 0
         if ($numberGrade == 0) {
+            // Add 1 to the failed participants (grade 0 = failed)
             $this->failedParticipants++;
         } else {
+            // Add 1 to the passed participants
             $this->passedParticipants++;
         }
     }
 
+    /**
+     * Get the participants of 
+     */
     function getCourseParticipants()
     {
         return $this->courseParticipants;
     }
 
+    /**
+     * Get the passed participants 
+     */
     function getPassedParticipants()
     {
         return $this->passedParticipants;
     }
 
+    /**
+     * Get the failed participants
+     */
     function getFailedParticipants()
     {
         return $this->failedParticipants;
     }
 
+    /**
+     * Convert UNIX time to Year. Format example 1990
+     */
     function convertUnixTime($unixTime)
     {
         return gmdate("Y", $unixTime);
     }
 
+    /**
+     * Get the average grade
+     */
     function getAverageGrade()
     {
+        // Calculate the average
         $average =  $this->sumGrades / $this->courseParticipants;
+        // Return the letter grade that fits the average
         if ($average < 0.49) {
             return "F";
         } else if ($average > 0.51 && $average <= 1.5) {
