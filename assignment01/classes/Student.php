@@ -1,6 +1,6 @@
 <?php
 
-require_once('University.php');
+require_once('classes/University.php');
 
 
 class Student extends University
@@ -76,6 +76,11 @@ class Student extends University
             return "High honour";
         }
         return $this->gpa;
+    }
+
+    function convertUnixTime($unixTime)
+    {
+        return gmdate("Y-m-d", $unixTime);
     }
 
     /**

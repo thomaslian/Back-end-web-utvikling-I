@@ -1,12 +1,10 @@
-Animal Name;Class;Habitat
-Dolphin;Mammal;Aquatic
-Frog;Reptile;Amphibian
-Lion;Mammal;Terrestrial
-Gecko;Reptile;Terrestrial
-Penguin;Bird;Amphibian
-Rattlesnake;Reptile;Terrestrial
-Eagle;Bird;Terrestrial
-Salmon;Fish;Aquatic
-Elephant;Mammal;Terrestrial
-Sea Turtle;Reptile;Aquatic
-Shark;Fish;Aquatic
+Student number,First name,Last name,DOB,Grade,Course code,Course name,Course year,Course semester,Instructor name,Number of credits
+1,Peter,Pan,703209600,C,MAST2009,3D Computer Modeling and Simulation,1422835200,Fall,Jack,10
+2,Mary,Poppins,782092800,B,MAST2009,3D Computer Modeling and Simulation,1422835200,Summer,Jack,10
+3,Mike,Wazowski,861494400,A,TS501218,Advanced Marine Logistics,1422835200,Spring,Wilfredo,10
+4,David,Dawson,693532800,A,TS501218,Advanced Marine Logistics,1422835200,Spring,Wilfredo,10
+5,Captain,Gantu,698716800,B,TS501218,Advanced Marine Logistics,1422835200,Spring,Wilfredo,10
+6,Grunkle,Stan,631152000,A,BMRR4020,Advanced Tax Law,1422835200,Spring,Willy,5
+7,Li,Shang,640051200,C,MAST2009,3D Computer Modeling and Simulation,1422835200,Spring,Jack,10
+1,Peter,Pan,703209600,F,TS501218,Advanced Marine Logistics,1422835200,Spring,Wilfredo,10
+7,Li,Shang,640051200,B,TS501218,Advanced Marine Logistics,1422835200,Spring,Wilfredo,10

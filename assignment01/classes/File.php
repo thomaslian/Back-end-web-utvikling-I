@@ -2,7 +2,7 @@
 
 class File
 {
-    private $fileName;
+    private $fileName = "data/";
 
     /**
      * Constructor sets the name of the file when initialized.
@@ -10,7 +10,7 @@ class File
      */
     function __construct($fileName)
     {
-        $this->fileName = $fileName;
+        $this->fileName .= $fileName;
     }
 
     /**
@@ -22,7 +22,6 @@ class File
     function createFile($content)
     {
         $file = fopen($this->fileName, "w") or die("Failed to load file!");
-        var_dump($content[0]);
         fputcsv($file, array_keys($content[0]));
         foreach ($content as $data) {
             fputcsv($file, $data);
@@ -54,7 +53,8 @@ class File
             fclose($file);
             return $contentArray;
         } else {
-            print("<p>The " . $this->fileName . " does not exist. Please upload the University file at the data page!</p>");
+            print("<p>The " . $this->fileName . " file does not exist. Please upload the data.csv file at the <a href='data.php'>data.php</a> page!</p>");
+            exit();
         }
     }
 

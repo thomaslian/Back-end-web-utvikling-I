@@ -30,9 +30,8 @@
 <body>
 
     <?php
-    require 'File.php';
-
-    include 'Student.php';
+    require 'classes/File.php';
+    require 'classes/Student.php';
 
     $studentsFile = new File("studentsDatabase.csv");
     $students = $studentsFile->getFileContent();
@@ -59,7 +58,7 @@
                 "Student number" => $studentInfo["Student number"],
                 "First name" => $studentInfo["First name"],
                 "Last name" => $studentInfo["Last name"],
-                "DOB" => $studentInfo["DOB"],
+                "DOB" => $student->convertUnixTime($studentInfo["DOB"]),
                 "Courses completed" => $student->getCompletedCourses(),
                 "Courses failed" => $student->getFailedCourses(),
                 "GPA" => $student->getGPA(),
@@ -69,7 +68,7 @@
     }
 
 
-    // Sort array by GPA
+    // Sort students by GPA
     usort($studentsWithGrades, function ($a, $b) {
         return $a['GPA'] < $b['GPA'];
     });

@@ -35,24 +35,15 @@
     </form>
 
     <?php
-    require 'File.php';
-
-    include 'Student.php';
+    require 'classes/File.php';
 
     if ($_FILES) {
         $name = $_FILES['filename']['name'];
-        move_uploaded_file($_FILES['filename']['tmp_name'], $name);
+        move_uploaded_file($_FILES['filename']['tmp_name'], "data/" . $name);
         // Create a new instance of the uploaded file
         $file = new File($name);
         // Get the content of the file
         $contentArray = $file->getFileContent();
-
-        echo "<table><tr>";
-        foreach (array_keys($contentArray[0]) as $header) {
-            echo "<th>$header</th>";
-        }
-        echo "</tr>";
-
 
         $students = [];
         $studentGrades = [];
@@ -63,7 +54,6 @@
             foreach ($students as $key => $addedStudent) {
                 // Check if student is already added
                 if ($addedStudent['Student number'] == $content['Student number']) {
-                    echo "THIS STUDENT ALREADY EXISTS!";
                     // Student already exists
                     $isStudentAdded = true;
                 }
@@ -93,29 +83,50 @@
             }
         }
 
-
-        $studentsFile = new File("studentsDatabase.csv");
-        //print_r($studentsFile->getFileContent());
-        $studentsFile->createFile($students);
-
-        $gradesFile = new File("gradesDatabase.csv");
-        //print_r($gradesFile->getFileContent());
-        $gradesFile->createFile($studentGrades);
-
-
-
-        // List students in a table
+        $courses = [];
+        $courseParticipants = [];
+        // Organize courses and get values
         foreach ($contentArray as $content) {
-            echo "<tr>";
-            foreach ($content as $key => $stud) {
-                echo "<td>$stud</td>";
+            $isCourseAdded = false;
+            // Go through already added courses
+            if ($courses) {
+                foreach ($courses as $key => $addedCourse) {
+                    // Check if course is already added
+                    if ($addedCourse['Course code'] == $content['Course code']) {
+                        // Course already exists
+                        $isCourseAdded = true;
+                    }
+                }
             }
-            echo "</tr>";
+            if (!$isCourseAdded) {
+                array_push(
+                    $courses,
+                    [
+                        "Course code" => $content["Course code"],
+                        "Course name" => $content["Course name"],
+                        "Course year" => $content["Course year"],
+                        "Course semester" => $content["Course semester"],
+                        "Instructor name" => $content["Instructor name"],
+                        "Number of credits" => $content["Number of credits"]
+                    ]
+                );
+            }
         }
 
-        echo "</table>";
 
-        echo "<br>File uploaded!<br>";
+        // Create the students database
+        $studentsFile = new File("studentsDatabase.csv");
+        $studentsFile->createFile($students);
+
+        // Create the grades database
+        $gradesFile = new File("gradesDatabase.csv");
+        $gradesFile->createFile($studentGrades);
+
+        // Create the courses database
+        $studentsFile = new File("coursesDatabase.csv");
+        $studentsFile->createFile($courses);
+
+        echo "<p>File uploaded!</p>";
     }
     ?>
 

@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <title>Courses</title>
 
@@ -25,30 +26,71 @@
 
 
 <!-- Body -->
-<body>
-    
-    <?php
-    $numberOfUniqueCourses = 0;
 
-    print "<p>Number of students: $numberOfUniqueCourses</p>";
+<body>
+
+    <?php
+    require 'classes/File.php';
+    include 'classes/Course.php';
+
+    $coursesFile = new File("coursesDatabase.csv");
+    $courses = $coursesFile->getFileContent();
+
+    $gradesFile = new File("gradesDatabase.csv");
+    $grades = $gradesFile->getFileContent();
+
+    $coursesWithParticipants = [];
+    foreach ($courses as $courseInfo) {
+        $course = new Course;
+        foreach ($grades as $grade) {
+            if ($courseInfo["Course code"] == $grade["Course code"]) {
+                $course->setParticipant($grade["Grade"]);
+            }
+        }
+        array_push($coursesWithParticipants, [
+            "Course code" => $courseInfo["Course code"],
+            "Course name" => $courseInfo["Course name"],
+            "Course year" => $course->convertUnixTime($courseInfo["Course year"]),
+            "Course semester" => $courseInfo["Course semester"],
+            "Instructor name" => $courseInfo["Instructor name"],
+            "Number of credits" => $courseInfo["Number of credits"],
+            "Number of students registered" => $course->getCourseParticipants(),
+            "Number of students passed" => $course->getPassedParticipants(),
+            "Number of students failed" => $course->getFailedParticipants(),
+            "Average grade taken" => $course->getAverageGrade()
+        ]);
+    }
+
+    // Sort courses by number of students
+    usort($coursesWithParticipants, function ($a, $b) {
+        return $a['Number of students registered'] < $b['Number of students registered'];
+    });
+
+
+    $numberOfUniqueCourses = University::$num_course;
+
+    echo "<p>Number of courses: $numberOfUniqueCourses</p>";
+
+
+    echo "<table><tr>";
+    foreach (array_keys($coursesWithParticipants[0]) as $header) {
+        echo "<th>$header</th>";
+    }
+    echo "</tr>";
+
+
+    // List students in a table
+    foreach ($coursesWithParticipants as $course) {
+        echo "<tr>";
+        foreach ($course as $info) {
+            echo "<td>$info</td>";
+        }
+        echo "</tr>";
+    }
+
+    echo "</table>";
     ?>
 
-
-    <!-- Sort courses by number of students -->
-    <table>
-        <tr>
-            <th>Course code</th>
-            <th>Course name</th>
-            <th>Course year</th>
-            <th>Course semester</th>
-            <th>Instructor name</th>
-            <th>Number of credits</th>
-            <th>Number of students registered</th>
-            <th>Number of students passed</th>
-            <th>Number of students failed</th>
-            <th>Average grade taken</th>
-        </tr>
-    </table>
-
 </body>
+
 </html>
