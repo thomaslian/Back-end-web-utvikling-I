@@ -26,16 +26,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a28c94da-371a-48b1-b83d-b8a17d0322ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/treehouse/build-basic-php-website/details.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/treehouse/build-basic-php-website/inc/functions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab08/IDG2003-L8.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab08/Lab8_Instructions.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab08/Registration.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab08/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treehouse/build-basic-php-website/.idea/build-basic-php-website.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/treehouse/build-basic-php-website/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/treehouse/build-basic-php-website/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/treehouse/build-basic-php-website/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/treehouse/build-basic-php-website/catalog.php" beforeDir="false" afterPath="$PROJECT_DIR$/treehouse/build-basic-php-website/catalog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treehouse/build-basic-php-website/inc/data.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/treehouse/build-basic-php-website/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/treehouse/build-basic-php-website/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +91,8 @@
       <workItem from="1601639527296" duration="7367000" />
       <workItem from="1601646917601" duration="2435000" />
       <workItem from="1601834801005" duration="17000" />
-      <workItem from="1602158767275" duration="3452000" />
+      <workItem from="1602158767275" duration="3881000" />
+      <workItem from="1602245645010" duration="5539000" />
     </task>
     <servers />
   </component>
@@ -211,5 +208,9 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="365" y="348" key="SettingsEditor/0.0.3440.1400@0.0.3440.1400" timestamp="1601647102520" />
+    <state x="2438" y="12" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1602248988515">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2438" y="12" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1602248988515" />
   </component>
 </project>
