@@ -84,16 +84,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </form>
 
 <?php
-echo "<h2>Your Input:</h2>";
-echo $username;
-echo "<br>";
-echo $firstname;
-echo "<br>";
-echo $lastname;
-echo "<br>";
-echo $password;
-echo "<br>";
-echo $gender;
+if ($username) {
+    echo "User successfully registered";
+}
 
 ?>
 

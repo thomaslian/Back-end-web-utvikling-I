@@ -62,7 +62,7 @@ function displayLoginForm()
 
     echo <<<END
         <h2>Login</h2>
-			<form method="post">
+			<form action="login.php" method="post">
 				<table>
 					<tr>
 						<td>User name:</td>
@@ -97,23 +97,6 @@ function createUser($username, $firstname, $lastname, $gender, $password)
     checkIfQueryFailed($result);
 }
 
-function createUser1($username, $firstname, $lastname, $gender, $password)
-{
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $customer[] = getUserDetails($username);
-    if (!$customer) {
-        global $connection;
-        $query = "INSERT INTO users (username, name, surname, gender, password) VALUES ('$username', '$firstname', '$lastname', '$gender', '$hashedPassword')";
-        $result = mysqli_query($connection, $query);
-
-        checkIfQueryFailed($result);
-    } else {
-        $hashedPasswordFromDb = $customer[0]["password"];
-        if (password_verify($password, $hashedPasswordFromDb))
-            updateUser($username, $firstname, $lastname, $gender, $hashedPassword);
-    }
-}
-
 function updateUser($username, $firstname, $lastname, $gender, $hashedPassword)
 {
     global $connection;
@@ -145,7 +128,28 @@ function checkIfQueryFailed($result)
 }
 
 //create function for loginUser
+function loginUser()
+{
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $username = sanitizeInput($_POST["username"]);
+        $password = sanitizeInput($_POST["password"]);
 
+        if (getUserDetails($username)) {
+            $user = getUserDetails($username);
+            if (password_verify($password, $user["password"])) {
+                echo "Password is correct";
+                return $user;
+            } else {
+                echo "Password is incorrect";
+                return false;
+            }
+        } else {
+            echo "User is not found";
+            return false;
+        }
+    }
+    return false;
+}
 
 // create function to sanitizeInput
 function sanitizeInput($data)
