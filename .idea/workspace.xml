@@ -26,12 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a28c94da-371a-48b1-b83d-b8a17d0322ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lab08/login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab08/logout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab08/profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab08/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/lab08/Registration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab08/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lab08/functions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +88,9 @@
       <workItem from="1601834801005" duration="17000" />
       <workItem from="1602158767275" duration="3881000" />
       <workItem from="1602245645010" duration="5614000" />
-      <workItem from="1602520455613" duration="5847000" />
+      <workItem from="1602520455613" duration="6286000" />
+      <workItem from="1602855360578" duration="194000" />
+      <workItem from="1602855555996" duration="2440000" />
     </task>
     <servers />
   </component>
@@ -137,10 +134,10 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="618" y="573" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.3440.1400@0.0.3440.1400" timestamp="1601638661614" />
-    <state x="1361" y="468" key="FileChooserDialogImpl" timestamp="1601646217270">
+    <state x="1361" y="468" key="FileChooserDialogImpl" timestamp="1602855641554">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1361" y="468" key="FileChooserDialogImpl/0.0.3440.1400@0.0.3440.1400" timestamp="1601646217270" />
+    <state x="1361" y="468" key="FileChooserDialogImpl/0.0.3440.1400@0.0.3440.1400" timestamp="1602855641554" />
     <state width="3397" height="556" key="GridCell.Tab.0.bottom" timestamp="1601649353522">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
