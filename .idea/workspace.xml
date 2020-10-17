@@ -26,10 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a28c94da-371a-48b1-b83d-b8a17d0322ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/treehouse/browser_persistent_data_php_2/inc/cookie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treehouse/browser_persistent_data_php_2/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/treehouse/browser_persistent_data_php_2/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treehouse/browser_persistent_data_php_2/story.php" beforeDir="false" afterPath="$PROJECT_DIR$/treehouse/browser_persistent_data_php_2/story.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +91,7 @@
       <workItem from="1602520455613" duration="6286000" />
       <workItem from="1602855360578" duration="194000" />
       <workItem from="1602855555996" duration="2537000" />
-      <workItem from="1602930092460" duration="1921000" />
+      <workItem from="1602930092460" duration="2738000" />
     </task>
     <servers />
   </component>
