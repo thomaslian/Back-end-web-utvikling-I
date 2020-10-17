@@ -26,7 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a28c94da-371a-48b1-b83d-b8a17d0322ae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/inc/connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/inc/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/inc/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +95,7 @@
       <workItem from="1602520455613" duration="6286000" />
       <workItem from="1602855360578" duration="194000" />
       <workItem from="1602855555996" duration="2537000" />
-      <workItem from="1602930092460" duration="2738000" />
+      <workItem from="1602930092460" duration="6565000" />
     </task>
     <servers />
   </component>

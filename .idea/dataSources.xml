@@ -7,5 +7,11 @@
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mariadb://localhost</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="database" uuid="7969844a-8cd4-4fa3-90fb-55effc2e1753">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\xampp\htdocs\php\treehouse\integrating_php_with_databases_s1v1\inc\database.db</jdbc-url>
+    </data-source>
   </component>
 </project>
