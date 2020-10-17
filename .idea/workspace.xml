@@ -26,7 +26,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a28c94da-371a-48b1-b83d-b8a17d0322ae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/treehouse/browser_persistent_data_php_2/inc/cookie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treehouse/browser_persistent_data_php_2/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/treehouse/browser_persistent_data_php_2/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treehouse/browser_persistent_data_php_2/story.php" beforeDir="false" afterPath="$PROJECT_DIR$/treehouse/browser_persistent_data_php_2/story.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +93,8 @@
       <workItem from="1602245645010" duration="5614000" />
       <workItem from="1602520455613" duration="6286000" />
       <workItem from="1602855360578" duration="194000" />
-      <workItem from="1602855555996" duration="2440000" />
+      <workItem from="1602855555996" duration="2537000" />
+      <workItem from="1602930092460" duration="1921000" />
     </task>
     <servers />
   </component>
@@ -210,5 +214,9 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="2438" y="12" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1602248988515" />
+    <state x="2243" y="641" width="672" height="678" key="search.everywhere.popup" timestamp="1602930340993">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2243" y="641" width="672" height="678" key="search.everywhere.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1602930340993" />
   </component>
 </project>
