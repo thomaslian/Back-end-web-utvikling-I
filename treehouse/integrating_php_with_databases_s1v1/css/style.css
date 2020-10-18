@@ -34,6 +34,17 @@ video {
     *zoom: 1;
 }
 
+.search form
+{
+    margin: 10px 0 10px auto;
+    width: 300px;
+}
+.search form input[type="submit"]
+{
+    padding: 6px;
+    width: auto;
+}
+
 /*
  * Prevents modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS5 devices.

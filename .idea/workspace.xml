@@ -26,11 +26,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a28c94da-371a-48b1-b83d-b8a17d0322ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/inc/connection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/catalog.php" beforeDir="false" afterPath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/catalog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/details.php" beforeDir="false" afterPath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/details.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/inc/connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/inc/connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/inc/data.php" beforeDir="false" afterPath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/inc/data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/inc/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/inc/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/inc/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/inc/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/suggest.php" beforeDir="false" afterPath="$PROJECT_DIR$/treehouse/integrating_php_with_databases_s1v1/suggest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +100,8 @@
       <workItem from="1602520455613" duration="6286000" />
       <workItem from="1602855360578" duration="194000" />
       <workItem from="1602855555996" duration="2537000" />
-      <workItem from="1602930092460" duration="6565000" />
+      <workItem from="1602930092460" duration="6602000" />
+      <workItem from="1603015178478" duration="14683000" />
     </task>
     <servers />
   </component>
@@ -207,6 +213,14 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="3397" height="556" key="GridCell.Tab.3.right/0.0.3440.1400@0.0.3440.1400" timestamp="1601649353523" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1603018124014">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.3440.1400@0.0.3440.1400" timestamp="1603018124014" />
+    <state x="2356" y="56" key="RollbackChangesDialog" timestamp="1603023065028">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2356" y="56" key="RollbackChangesDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1603023065028" />
     <state x="365" y="348" key="SettingsEditor" timestamp="1601647102520">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -215,9 +229,9 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="2438" y="12" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1602248988515" />
-    <state x="2243" y="641" width="672" height="678" key="search.everywhere.popup" timestamp="1602930340993">
+    <state x="2243" y="641" width="672" height="678" key="search.everywhere.popup" timestamp="1603035341137">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="2243" y="641" width="672" height="678" key="search.everywhere.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1602930340993" />
+    <state x="2243" y="641" width="672" height="678" key="search.everywhere.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1603035341137" />
   </component>
 </project>

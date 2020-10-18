@@ -1,28 +1,27 @@
-<?php 
-include("inc/data.php");
+<?php
 include("inc/functions.php");
 
 $pageTitle = "Personal Media Library";
 $section = null;
 
 include("inc/header.php"); ?>
-		<div class="section catalog random">
+    <div class="section catalog random">
 
-			<div class="wrapper">
+        <div class="wrapper">
 
-				<h2>May we suggest something?</h2>
+            <h2>May we suggest something?</h2>
 
-        <ul class="items">
-            <?php
-            $random = array_rand($catalog,4);
-            foreach ($random as $id) {
-                echo get_item_html($id,$catalog[$id]);
-            }
-            ?>							
-				</ul>
+            <ul class="items">
+                <?php
+                $random = random_catalog_array();
+                foreach ($random as $item) {
+                    echo get_item_html($item);
+                }
+                ?>
+            </ul>
 
-			</div>
+        </div>
 
-		</div>
+    </div>
 
 <?php include("inc/footer.php"); ?>

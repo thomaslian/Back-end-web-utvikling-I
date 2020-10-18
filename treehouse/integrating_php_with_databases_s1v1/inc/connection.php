@@ -8,12 +8,3 @@ try {
     echo $e->getMessage();
     exit;
 }
-
-try {
-    $results = $db->query("SELECT title, category FROM Media");
-    echo "Retrieved results";
-} catch (Exception $e) {
-    echo "Unable to retrieve results: ";
-    echo $e->getMessage();
-    exit;
-}
