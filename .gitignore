@@ -1,0 +1,12 @@
+lab09/passportappointmentsystem/node_modules
+lab09/passportappointmentsystem/public/hot
+lab09/passportappointmentsystem/public/storage
+lab09/passportappointmentsystem/storage/*.key
+lab09/passportappointmentsystem/vendor
+lab09/passportappointmentsystem/.env
+lab09/passportappointmentsystem/.env.backup
+lab09/passportappointmentsystem/.phpunit.result.cache
+lab09/passportappointmentsystem/Homestead.json
+lab09/passportappointmentsystem/Homestead.yaml
+lab09/passportappointmentsystem/npm-debug.log
+lab09/passportappointmentsystem/yarn-error.log
