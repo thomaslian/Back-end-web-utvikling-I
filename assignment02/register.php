@@ -62,26 +62,34 @@ Validation :
 
 include "classes/class_User.php";
 
-// define variables and set to empty values
-$username = $password = "";
-$errorMsg = $successMsg = "";
+// Define variables and set to empty values
+$username = "";
+$password = "";
+$errorMsg = "";
+$successMsg = "";
 
+// Check if the user have clicked the register button
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Check if any of the input fields are empty, and display an error if they are
     if (empty($_POST["username"])) {
         $errorMsg = "Username is required";
     } elseif (empty($_POST["password"])) {
         $errorMsg = "Password is required";
-    } elseif (strlen(($_POST["password"])) < 8) {
+    } elseif (strlen(($_POST["password"])) < 8) { // Check if password is less than 8
         $errorMsg = "Password needs to be a minimum of 8 characters";
     } elseif (empty($_POST["conf-password"])) {
         $errorMsg = "Please confirm your password";
-    } elseif ($_POST["conf-password"] != $_POST["password"]) {
+    } elseif ($_POST["conf-password"] != $_POST["password"]) { // Check if both passwords match
         $errorMsg = "Passwords does not match!";
     } else {
+        // Create a new user with the User if no errors are found
         $user = new User($_POST["username"], $_POST["password"]);
+        // Check if the username in the database
         if ($user->checkIfUsernameUnique()) {
+            // If not in the database, display an error
             $errorMsg = "The entered username does not exist on the system. Contact the administrator.";
         } else {
+            // If user is in database, update the user password
             if ($user->updateUserPassword()) {
                 /*
                  Step 3 : 20% of the Grade
@@ -94,6 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     Show that this particular steps works, by echoing the correct username on the Login page.
                  */
 
+                // Hide the form
                 echo "
                 <style>
                     form {
@@ -101,11 +110,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }
                 </style>
                 ";
+                // Show a success message that the password change was successful
                 $successMsg = "Password change was successfully!";
+                // Start a session, this will include the username in the session
                 $user->startSession();
+                // Go to the login page
                 header("Location:login.php");
-
             } else {
+                // Display an error if updating the password fails
                 $errorMsg = "There was an error updating your password. Contact the administrator.";
             }
         }
@@ -129,7 +141,7 @@ input password field and confirm password field matches.
 4. A register button. Upon click, should send the data to the backend for validation and updating the user details.
 -->
 <div class="wrap">
-    <p><?php echo $successMsg ?></p>
+    <p><?php echo $successMsg;?></p>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
         <label for="username">Username: <span class="error">*</span></label>

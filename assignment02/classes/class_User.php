@@ -12,9 +12,12 @@ class User extends Database
 
     function __construct($username, $password)
     {
+        // Connect to the database because cleanVar requires a database connection
         $connection = parent::connect();
+        // Sanitize username and password
         $this->username = parent::cleanVar($username, $connection);
         $this->password = parent::cleanVar($password, $connection);
+        // Disconnect from the database
         parent::disconnect($connection);
     }
 
@@ -110,26 +113,36 @@ class User extends Database
         $this->disconnect($connection);
     }
 
-    // Registration Methods
+    // Update user password
     function updateUserPassword()
     {
+        // Connect to the database
         $connection = parent::connect();
+        // Get the username and store it in a variable
         $username = $this->username;
+        // Hash the password
         $hashedPassword = password_hash($this->password, PASSWORD_DEFAULT);
+        // Create the query for updating the user password
         $query = "UPDATE users ";
         $query .= "SET password = ('$hashedPassword') ";
         $query .= "WHERE username = ('$username');";
 
+        // Do the query and store the results
         $result = mysqli_query($connection, $query);
 
+        // Disconnect the connection
         parent::disconnect($connection);
+
+        // If there are no results, return false because we did not manage to change the user password
         if (!$result) {
             return false;
         }
 
+        // Return true = User password is changed
         return true;
     }
 
+    // Start a session and store the username in the session (for passing the username to the login page)
     function startSession() {
         session_start();
         $_SESSION['username'] = $this->username;
