@@ -1,2 +1,2 @@
 # IDG2003 - Back-end web utvikling I - PHP
-IDG2003 - Back-end web utvikling I
+Work from the back-end course at NTNU Gjøvik.
